@@ -23,9 +23,8 @@ This project serves as a foundational learning ground for mastering the basics o
       --data-urlencode "description=Spring Boot project for learning Web basics and REST API" \
       --data-urlencode "packageName=com.example.learning.springbootwebbasics"
     ```
-    *(注: `bootVersion`は、`curl`実行時に使用した実際のバージョンに置き換えてください)*
 2.  Unzip the downloaded file:
-    `unzip spring-boot-web-basics.zip`
+    `unzip spring-boot-web-basics.zip -d spring-boot-web-basics`
 3.  Navigate into the project directory:
     `cd spring-boot-web-basics`
 4.  Build the project using Maven Wrapper:
