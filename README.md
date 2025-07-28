@@ -11,17 +11,16 @@ This project serves as a foundational learning ground for mastering the basics o
 ## How to Generate & Run
 1.  Generate and download the project using `curl`:
     ```bash
-    curl -L [https://start.spring.io/starter.zip](https://start.spring.io/starter.zip) -o spring-boot-web-basics.zip \
-      --data-urlencode "dependencies=web" \
-      --data-urlencode "type=maven-project" \
-      --data-urlencode "language=java" \
-      --data-urlencode "bootVersion=3.3.0" \
-      --data-urlencode "javaVersion=17" \
-      --data-urlencode "groupId=com.example.learning" \
-      --data-urlencode "artifactId=spring-boot-web-basics" \
-      --data-urlencode "name=spring-boot-web-basics" \
-      --data-urlencode "description=Spring Boot project for learning Web basics and REST API" \
-      --data-urlencode "packageName=com.example.learning.springbootwebbasics"
+    curl https://start.spring.io/starter.zip -o spring-boot-web-basics.zip \
+      -d dependencies=web \
+      -d type=maven-project \
+      -d language=java \
+      -d javaVersion=17 \
+      -d groupId=com.example.learning \
+      -d artifactId=spring-boot-web-basics \
+      -d name=spring-boot-web-basics \
+      -d description="Spring Boot project for learning Web basics and REST API" \
+      -d packageName=com.example.learning.springbootwebbasics
     ```
 2.  Unzip the downloaded file:
     `unzip spring-boot-web-basics.zip -d spring-boot-web-basics`
