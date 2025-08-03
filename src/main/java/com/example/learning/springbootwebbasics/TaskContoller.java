@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
+
 @RestController // このクラスが RESTful API のコントローラーであることを示す
 @RequestMapping("/api/tasks") // このコントローラーの全てのエンドポイントのベースパス
 public class TaskContoller {
@@ -27,7 +29,7 @@ public class TaskContoller {
     // HTTP POST リクエストを /api/tasks にマッピング
     // @RequestBody でリクエストボディの JSON を TaskRequest オブジェクトに変換
     @PostMapping
-    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest) {
+    public ResponseEntity<TaskResponse> createTask(@RequestBody @Valid TaskRequest taskRequest) {
 
         // TaskRequest から Task オブジェクトを作成
         Task newTask = new Task(taskRequest.getTitle(), taskRequest.getDescription());
@@ -66,7 +68,7 @@ public class TaskContoller {
     // HTTP PUT リクエストを /api/tasks/{id} にマッピング
     // @PathVariable で ID 、@RequestBody で更新データを受け取る
     @PutMapping("/{id}")
-    public ResponseEntity<TaskResponse> updateTask(@PathVariable Long id, @RequestBody TaskRequest taskRequest) {
+    public ResponseEntity<TaskResponse> updateTask(@PathVariable Long id, @RequestBody @Valid TaskRequest taskRequest) {
         Optional<Task> taskOptional = tasks.stream().filter(task -> task.getId().equals(id)).findFirst();
 
         if (taskOptional.isPresent()) {
