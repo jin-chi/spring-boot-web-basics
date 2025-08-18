@@ -1,3 +1,6 @@
+# プロジェクト統合
+本プロジェクトは java-sandbox に統合しました。
+
 # Spring Boot Web Basics
 
 This project serves as a foundational learning ground for mastering the basics of Spring Boot web application and REST API development. It was generated directly from Spring Initializr's API using `curl` command.
